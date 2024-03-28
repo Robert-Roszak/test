@@ -40,12 +40,16 @@ app.use('*', (req, res) => {
 /* MONGOOSE */
 const NODE_ENV = process.env.NODE_ENV;
 console.log('NODE_ENV: ' + NODE_ENV)
-let dbUri = '';
-if (NODE_ENV === 'production') dbUri = process.env.DBURLFINAL as string;
-else if (NODE_ENV === 'test') dbUri = process.env.DBURLLOCALTEST as string;
-else dbUri = process.env.DBURLLOCAL as string;
+
+// let dbUri = '';
+// if (NODE_ENV === 'production') dbUri = process.env.DBURLFINAL as string;
+// else if (NODE_ENV === 'test') dbUri = process.env.DBURLLOCALTEST as string;
+// else dbUri = process.env.DBURLLOCAL as string;
+
+const dbUri = process.env.DBURLFINAL as string;
 mongoose.set('strictQuery', true);
 console.log('dbUri: ' + dbUri)
+
 mongoose.connect(dbUri);
 const db = mongoose.connection;
 app.use(session({
