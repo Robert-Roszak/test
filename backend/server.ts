@@ -46,7 +46,7 @@ console.log('NODE_ENV: ' + NODE_ENV)
 // else if (NODE_ENV === 'test') dbUri = process.env.DBURLLOCALTEST as string;
 // else dbUri = process.env.DBURLLOCAL as string;
 
-const dbUri = process.env.DBURLFINAL as string;
+const dbUri = process.env.MONGODB_URI as string;
 mongoose.set('strictQuery', true);
 console.log('dbUri: ' + dbUri)
 
