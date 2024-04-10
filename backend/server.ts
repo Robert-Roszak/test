@@ -39,7 +39,7 @@ app.use('*', (req, res) => {
 
 /* MONGOOSE */
 const NODE_ENV = process.env.NODE_ENV;
-console.log('NODE_ENV: ' + NODE_ENV)
+console.log('NODE_ENV: ' + NODE_ENV);
 
 // let dbUri = '';
 // if (NODE_ENV === 'production') dbUri = process.env.DBURLFINAL as string;
@@ -48,9 +48,9 @@ console.log('NODE_ENV: ' + NODE_ENV)
 
 const dbUri = process.env.MONGODB_URI as string;
 mongoose.set('strictQuery', true);
-console.log('dbUri: ' + dbUri)
-
-mongoose.connect(dbUri);
+console.log('dbUri: ' + dbUri);
+const options = {};
+mongoose.connect(dbUri, options);
 const db = mongoose.connection;
 app.use(session({
   secret: 'hereIsRandomSecretCodeThatNobodyKnowsAbout!',
