@@ -46,11 +46,15 @@ console.log('NODE_ENV: ' + NODE_ENV);
 // else if (NODE_ENV === 'test') dbUri = process.env.DBURLLOCALTEST as string;
 // else dbUri = process.env.DBURLLOCAL as string;
 
+if (!process.env.MONGODB_URI) {
+  throw new Error('Add mongo URI');
+}
+
 const dbUri = process.env.MONGODB_URI as string;
 mongoose.set('strictQuery', true);
 console.log('dbUri: ' + dbUri);
-const options = {};
-mongoose.connect(dbUri, options);
+
+mongoose.connect(dbUri);
 const db = mongoose.connection;
 app.use(session({
   secret: 'hereIsRandomSecretCodeThatNobodyKnowsAbout!',
