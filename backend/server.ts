@@ -54,7 +54,8 @@ const dbUri = process.env.MONGODB_URI as string;
 mongoose.set('strictQuery', true);
 console.log('dbUri: ' + dbUri);
 
-mongoose.connect(dbUri);
+mongoose.connect(dbUri).catch(error => {throw new Error(error);});
+
 const db = mongoose.connection;
 app.use(session({
   secret: 'hereIsRandomSecretCodeThatNobodyKnowsAbout!',
