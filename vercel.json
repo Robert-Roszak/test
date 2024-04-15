@@ -6,5 +6,5 @@
       "destination": "/backend"
     }
   ],
-  "outputDirectory": "./"
+  "outputDirectory": "/"
 }
