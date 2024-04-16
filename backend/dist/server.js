@@ -23,6 +23,9 @@ app.use((0, helmet_1.default)({
     contentSecurityPolicy: false,
 }));
 /* API ENDPOINTS */
+app.get('/', (req, res) => {
+    res.json('Hello!');
+});
 app.use('/api', products_routes_1.default);
 app.use('/api', orders_routes_1.default);
 /* API ERROR PAGES */
