@@ -31,9 +31,9 @@ app.use('/api', (err, req, res, next) => {
     res.status(500).send('Go away!');
 });
 /* REACT WEBSITE */
-app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
+app.use(express_1.default.static(path_1.default.join(__dirname, '../../public')));
 app.use('*', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, '../public/index.html'));
+    res.sendFile(path_1.default.join(__dirname, '../../public/index.html'));
 });
 /* MONGOOSE */
 const NODE_ENV = process.env.NODE_ENV;

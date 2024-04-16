@@ -23,6 +23,9 @@ app.use(helmet({
 }));
 
 /* API ENDPOINTS */
+app.get('/', (req, res) => {
+  res.json('Hello!');
+});
 app.use('/api', productsRoutes);
 app.use('/api', orderRoutes);
 
@@ -33,9 +36,9 @@ app.use('/api', (err: Error, req: Request, res: Response, next: NextFunction) =>
 });
 
 /* REACT WEBSITE */
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../../public')));
 app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(__dirname, '../../public/index.html'));
 });
 
 /* MONGOOSE */
