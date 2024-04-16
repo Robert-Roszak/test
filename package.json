@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "start": "run-p start:* ",
     "start:react": "react-scripts start",
-    "start:backend": "nodemon --exec npx ts-node backend/server.ts"
+    "startt:backend": "nodemon --exec npx ts-node backend/server.ts"
   },
   "eslintConfig": {
     "extends": [
