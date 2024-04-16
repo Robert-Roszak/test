@@ -6,7 +6,8 @@ import styles from './Homepage.module.scss';
 
 const Component: React.FC = () => {
   const { data: products = [], isSuccess } = useFetchProductsQuery();
-
+  console.log('isSuccess? ' + isSuccess);
+  console.log('products: ' + products);
   if (isSuccess) {
     return (
       <div className={styles.root}>
