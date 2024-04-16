@@ -16,7 +16,7 @@ const app:Application = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('./'));
+
 app.use(helmet({
   crossOriginResourcePolicy: { policy: 'cross-origin' },
   contentSecurityPolicy: false,
@@ -40,7 +40,7 @@ app.use('*', (req, res) => {
 
 /* MONGOOSE */
 const NODE_ENV = process.env.NODE_ENV;
-console.log('NODE_ENV: ' + NODE_ENV);
+console.log('NODE_ENV : ' + NODE_ENV);
 
 // let dbUri = '';
 // if (NODE_ENV === 'production') dbUri = process.env.DBURLFINAL as string;
