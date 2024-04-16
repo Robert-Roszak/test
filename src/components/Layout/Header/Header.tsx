@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAppSelector } from '../../../redux/hooks';
 import { NavLink } from 'react-router-dom';
-
+import { API_URL } from '../../../config';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +11,7 @@ import styles from './Header.module.scss';
 
 const Component: React.FC = () => {
   const cart = useAppSelector(state => state.cart.items);
+  console.log('API_URL: ' + API_URL);
   return (
     <header className={styles.root}>
       <Container>
